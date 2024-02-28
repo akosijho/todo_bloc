@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => TodoBloc().add(LoadTodoEvent())),
+        BlocProvider(create: (_) => TodoBloc()..add(LoadTodoEvent())),
         BlocProvider(
             create: (context) =>
                 TodoFilterBloc(todoBloc: BlocProvider.of<TodoBloc>(context)))
